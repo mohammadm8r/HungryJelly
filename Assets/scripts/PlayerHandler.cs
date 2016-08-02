@@ -8,7 +8,7 @@ public class PlayerHandler : MonoBehaviour {
     private float speed;
     private Vector2 vectorVelocity;
     public float health;
-    public GameObject chocolate;
+    public GameObject chocolate, food;
 
 	// Use this for initialization
 	void Start () {
@@ -49,7 +49,10 @@ public class PlayerHandler : MonoBehaviour {
                 Destroy(chocolate);
                 health++;
                 break;
-
+            case "food":
+                Destroy(food);
+                Application.LoadLevel(1);
+                break;
         }
     }
 
